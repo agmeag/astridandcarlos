@@ -131,6 +131,37 @@
         },
 
         methods: {
+
+            processFile(event, index, question_id) {
+                let formData = new FormData();
+                formData.append('image_file', event.target.files[0]);
+                formData.append('id_question', question_id);
+                formData.append('id_trivia', this.trivia.id);
+                this.saving = true;
+                this.info_error = false;
+                this.info_saved = false;
+                axios.post('/admin/save_question_image', formData)
+                    .then((response) => {
+                        // this.trivia_list.splice(this.trivia.index, 1, response.data);
+                        let item = response.data;
+                        this.trivia.questions[index].image = item.image;
+                        this.trivia.questions[index].idtrivia_questions = item.idtrivia_questions;
+                        this.trivia.questions[index].answers.map((answer, index) => {
+                            answer.idtrivia_question = item.idtrivia_questions;
+                        });
+                        this.saved(true);
+                    })
+                    .catch((error) => {
+                        window.console.log(error);
+                        this.saved(false);
+                        if (error.response) {
+                            window.console.log(error.response);
+                            if (error.response.status == 401) {
+                                location.reload();
+                            }
+                        }
+                    });
+            },
             detectKey(ev) {
                 let keycode = ev.keyCode;
                 // this.emptyDialog = true;

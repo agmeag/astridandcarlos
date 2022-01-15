@@ -14,6 +14,6 @@ class Photo extends Model
      * @var array
      */
     protected $fillable = [
-        'url', 'deleted'
+        'url', 'deleted', 'created_at', 'updated_at'
     ];
 }
