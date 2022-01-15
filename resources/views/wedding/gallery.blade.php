@@ -23,7 +23,7 @@
 
     .image-ct {
         width: 100%;
-        padding: 18px;
+        /* padding: 18px; */
         height: 100%;
         overflow: hidden;
         border-radius: 12px;
@@ -39,7 +39,7 @@
 
     @media (max-width: 768px) {
         .image-ct {
-            padding: 10px !important;
+            /* padding: 10px !important; */
         }
 
         .app-ct {
@@ -59,6 +59,22 @@
         min-height: 100%;
         min-width: 100%;
     }
+
+    .opacity-0 {
+        opacity: 0;
+    }
+
+    * {
+        transition: all 300ms;
+    }
+
+    .display-0 {
+        display: none;
+    }
+
+    .display-1 {
+        display: flex;
+    }
 </style>
 <script src="/assets/lottiefiles/lottie-player.js"></script>
 
@@ -66,7 +82,7 @@
 @section('content')
 <div id="app" class="unselectable app-ct" v-cloak>
     <div class="inner-content">
-        <div class="image-ct animate__animated animate__fadeIn" v-if="image!=null && !loading" id="image">
+        <div class="image-ct animate__animated animate__fadeIn" v-if="image!=null && !loading && display" id="image">
             <img :src="image" alt="" class="image">
         </div>
         <div v-else class="flex-center loading" style="background-color: white; border-radius: 12px;">
@@ -92,6 +108,7 @@
                 files: [],
                 index: 0,
                 image: null,
+                display: true,
             };
         },
 
@@ -107,7 +124,7 @@
         created() {
             setInterval(() => {
                 this.nextImage();
-            }, 5000);
+            }, 8000);
         },
 
         destroyed() {
@@ -144,14 +161,26 @@
                 } else {
                     this.index = 0;
                 }
-                this.$nextTick(() => {
-                    document.querySelector("#image").removeClass('animate__animated');
-                });
-                this.$nextTick(() => {
 
-                    document.querySelector("#image").addClass('animate__animated');
-                });
+                // this.display = false;
                 this.image = this.files[this.index].url;
+                // this.display = true;
+                this.$nextTick(() => {
+                    document.getElementById("image").classList.remove("animate__fadeIn");
+                    document.getElementById("image").classList.remove("display-1");
+                    document.getElementById("image").classList.add("display-0");
+                });
+                setInterval(() => {
+                    document.getElementById("image").classList.remove("display-0");
+                    document.getElementById("image").classList.add("display-1");
+                    document.getElementById("image").classList.add("animate__fadeIn");
+                }, 200);
+                // setInterval(() => {
+                //     document.getElementById("image").classList.add("animate__fadeIn");
+                // }, 300);
+                // this.$nextTick(() => {
+                //     this.display = true;
+                // });
 
             },
 
