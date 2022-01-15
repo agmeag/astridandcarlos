@@ -8,7 +8,7 @@
                 <i class='bottom-nav-icon bx bxs-photo-album'></i></a>
             <a href="/">
                 <i class="bottom-nav-icon bx bxs-home"></i></a>
-            <a href="/wedding/video">
+            <a href="/wedding/gallery-wide">
                 <i class="bottom-nav-icon bx bxs-videos"></i></a>
         </div>
     </div>

@@ -13,11 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', 'HomeController@index');
-Route::get('/', 'GalleryController@gallery');
+Route::get('/', 'HomeController@index');
+// Route::get('/', 'GalleryController@gallery');
 Route::get('/wedding/gallery', 'GalleryController@gallery');
+Route::get('/wedding/gallery-wide', 'GalleryController@galleryWide');
 Route::get('/wedding/gallery/get_files', 'GalleryController@getPhotoList');
-Route::get('/wedding/video', 'VideoController@video');
+Route::get('/wedding/video', 'GalleryController@gallerywide');
 Route::get('/admin/admin/admin/gallery', 'GalleryController@adminGallery');
 Route::get('/admin/admin/admin/gallery/get_list', 'GalleryController@getAdminList');
 Route::post('/admin/admin/admin/gallery/delete', 'GalleryController@deleteFile');

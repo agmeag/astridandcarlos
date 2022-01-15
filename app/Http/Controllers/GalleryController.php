@@ -13,6 +13,11 @@ class GalleryController extends Controller
         return view('wedding.gallery');
     }
 
+    public function galleryWide()
+    {
+        return view('wedding.gallery-wide');
+    }
+
     public function getFileList()
     {
         $files = [];

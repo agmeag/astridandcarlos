@@ -10,6 +10,7 @@
         overflow: hidden;
         padding: 16px 15px 62px 15px;
         background-color: #343434 !important;
+
     }
 
     .inner-content {
@@ -19,6 +20,10 @@
         min-width: 100%;
         box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
         border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
     }
 
     .image-ct {
@@ -46,14 +51,44 @@
             padding: 8px 5px 42px 5x !important;
         }
     }
+
+    .gmail-icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        color: red;
+    }
+
+    .gmail-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background-color: white;
+        width: 270px;
+        padding: 10px;
+        border-radius: 12px;
+        box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+        text-align: center;
+        font-size: 1.4rem;
+        font-family: tahoma;
+        text-decoration: none;
+        color: #09F;
+    }
+    }
 </style>
 @endsection
 @section('content')
 <div id="app" class="unselectable app-ct" v-cloak>
     <div class="inner-content">
-        <div class="image-ct">
-            <img src="image" alt="" class="image">
-        </div>
+        <a href="https://meet.google.com/wdh-fnwp-baw" class="gmail-link">
+            <div class='gmail-icons'>
+                <i class='bx bxl-gmail'></i><i class='bx bx-right-arrow-alt'></i><img src="/assets/img/horizontal.png"
+                    alt="">
+            </div>
+            Join our Wedding / Unete a nuestra boda
+        </a>
     </div>
 </div>
 @endsection
