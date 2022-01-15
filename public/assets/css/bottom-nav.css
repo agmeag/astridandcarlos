@@ -1,0 +1,111 @@
+/* .bottom-nav {
+    width: 100%;
+    background-color: white;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    border-radius: 35px 35px 0 0;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.bottom-nav-icon-a {
+    font-size: 1.5rem;
+}
+
+.bottom-nav-icon {
+    font-size: 1.5rem;
+    margin-top: -10px;
+}
+
+.bottom-options {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.bottom-nav-activator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: -13px;
+
+}
+
+.bottom-nav-cnt {
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+    display: flex;
+    bottom: 0;
+    flex-direction: column;
+} */
+
+
+.bottom-options {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.bottom-nav {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    flex-wrap: wrap;
+    flex-direction: column !important;
+}
+
+.bottom-nav-cnt {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.bottom-nav-icon-a {
+    background-color: white;
+    width: 100px;
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 50px 50px 0 0;
+    border-top: 2px solid #8080806e;
+    border-left: 2px solid #8080806e;
+    border-right: 2px solid #8080806e;
+    cursor: pointer;
+
+}
+
+.bottom-nav-activator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -6px;
+}
+
+.bottom-options {
+    font-size: 1.5rem;
+    padding: 10px 0 10px 0;
+}
+
+.bottom-nav-icon {
+    filter: drop-shadow(0px 0px 2px gray)
+}
+
+.bottom-links {
+    margin-bottom: 0;
+    transition: all 1s;
+}
+
+.bottom-links-inactive {
+    margin-bottom: -90px;
+    transition: all 1s;
+}

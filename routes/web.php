@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
+Route::get('/wedding/gallery', 'GalleryController@gallery');
+Route::get('/wedding/gallery/get_files', 'GalleryController@getPhotoList');
+Route::get('/wedding/video', 'VideoController@video');
