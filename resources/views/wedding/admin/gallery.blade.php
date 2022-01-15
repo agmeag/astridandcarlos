@@ -269,6 +269,24 @@
     .icon {
         font-size: 2rem;
     }
+
+    .img-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @media (max-width: 768px) {
+        .img-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 165px);
+            overflow-y: auto;
+        }
+    }
 </style>
 <script src="/assets/lottiefiles/lottie-player.js"></script>
 
@@ -303,7 +321,6 @@
                     <i class='bx bxs-right-arrow'></i>
                 </div>
             </div>
-
         </template>
 
         <template v-if="multiple">
@@ -318,7 +335,7 @@
                     <i class='bx bxs-right-arrow'></i>
                 </div>
             </div>
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center">
+            <div class="img-container">
                 <template v-for="(item, i) in current_files">
                     <div class="multiple-img-cnt">
                         <img :src="item.file" alt="" class="multiple-img">
@@ -334,8 +351,6 @@
 
                 </template>
             </div>
-
-
         </template>
     </div>
 </div>
